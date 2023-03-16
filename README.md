@@ -1,2 +1,3 @@
-# PraticeC
-In this repository will have my training codes in the C programming language.
+# Practicing the C language 👩‍💻
+
+- StartingWithPointers: here you'll find 4 exercises to pratice pointers in vectors.
