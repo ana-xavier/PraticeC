@@ -2,26 +2,31 @@
 
 int procurar_valor(int *vetor, int tamanho, int valor);
 
+#define TAMVET 20   //define constante
+
 int main() {
     int vetor[] = {5, 7, 2, 9, 4};
-    int tamanho = 5;
-    int valor_procurado = 9;
-    int posicao = procurar_valor(vetor, tamanho, valor_procurado);
-    if (posicao == -1) {
-        printf("Valor nao encontrado\n");
-    } else {
-        printf("Valor encontrado na posicao %d\n", posicao);
-    }
-    return 0;
+    
+    int valor;
+    printf("Informe o valor a ser procurado: ");
+    scanf("%d", &valor);
+    
+    int pos = procurar_valor(vetor, TAMVET, valor);
+    
+    if(pos == 1)
+        printf("Valor %d não foi encontrado na lista\n", valor);
+    else
+        printf("O valor %d está na posição %d do vetor\n", valor);
 }
 
 int procurar_valor(int *vetor, int tamanho, int valor) {
-    int i;
-    for (i = 0; i < tamanho; i++) {
-        if (*vetor == valor) {
+    printf("Valor buscado: %d\n", valor);
+    printf("Endereço do vetor: %p\n", $vetor);
+    printf("Tamanho do vetor: %d\n", tamanho);         //tamanho de um inteiro (4 bytes)
+    
+    for (int i = 0; i < tamanho; i++) 
+        if (*vetor == valor)           //o que há naquele endereço? é igual ao valor buscado?
             return i;
-        }
-        vetor++;
-    }
+        vetor++;                       //vetor++ vai para o próximo endereço.
     return -1;
 }
